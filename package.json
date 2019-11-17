@@ -1,0 +1,54 @@
+{
+  "name": "npm-starter",
+  "version": "1.0.0",
+  "description": "Starter project for NPM package",
+  "main": "build/index.js",
+  "author": "David Alsh",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:prod",
+    "build:dev": "webpack",
+    "build:prod": "webpack --prod",
+    "build:stats": "webpack --prod --stats",
+    "build:watch": "webpack --watch",
+    "clean": "rm -r -f build node_modules",
+    "dev": "cd sandbox && parcel serve index.html",
+    "start": "npm run build:watch",
+    "test": "jest",
+    "test:cover": "jest --coverage",
+    "test:watch": "jest --watch",
+    "watch": "webpack --watch"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,js,tsx,jsx}"
+    ],
+    "coverageDirectory": "reports/coverage",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "reporters": [
+      "default"
+    ],
+    "testRegex": ".*\\.spec\\.(jsx?|tsx?)$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
